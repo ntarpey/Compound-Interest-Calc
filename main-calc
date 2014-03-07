@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Compound Interest Calculator</title>
+<script language="JavaScript">
+function calculate(formObj){
+     var presentVal = parseFloat(formObj.presentVal.value);
+     var intRate = parseFloat(formObj.intRate.value)/100.;
+     var years = parseFloat(formObj.years.value);
+   
+     var futureVal = presentVal * Math.pow((1.0+intRate),years);
+     var totalInt = futureVal - presentVal;
+     futureVal = Math.round(futureVal*100.0)/100.0;
+     totalInt  = Math.round(totalInt*100.0)/100.0;
+   
+     formObj.futureVal.value = futureVal;
+     formObj.totalInt.value = totalInt;
+   
+     return;
+}
+</script>
+
+<style>
+.calc{
+	width:120px;
+	margin-left: 205px;
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', 
+endColorstr='#f47a20');
+        /*The first background line is a fallback for the non-CSS3 browsers, the second line is for Webkit browsers, the third line is for Firefox, and the last line is a gradient filter that is only read by Internet Explorer.*/
+}
+.calc:hover {
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.calc:active {
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+
+body {
+  background-image:
+    linear-gradient(
+      green, #c0fcc6
+    );
+}
+</style>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+  $(function() {
+    $( document ).tooltip();
+  });
+</script>
+  
+
+
+</head>
+   
+<body>
+
+<h1><u>Compound Interest Calculator</u></h1>
+
+<p>Calculate the Compound Interest.</p>
+
+<h2>Inputs</h2>
+<form name="myform">
+<pre>
+Principal Amount ($):    <input type="text" name="presentVal" placeholder="Enter Value Here" title="Good: 100000.  $100.  $500.00. Bad: Letters, symbols in general">
+Annual Interest Rate(%): <input type="text" name="intRate" placeholder="Enter % Value Here" title="Example: Input 3 or 3% for .03.">
+Years of Compounding:    <input type="text" name="years" placeholder="Enter Value Here" title="Good: 100000.  100.  500.00. Bad: Letters, symbols in general">
+<input class="calc" type="button" name="calc" value="Calculate" onclick="calculate(myform)">
+</pre>
+
+
+<h2>Outputs</h2>
+<pre>
+Total Interest: <input type="text" name="totalInt" title="If you see NaN please try again with better inputs.">
+Future Value:   <input type="text" name="futureVal" title="If you see NaN please try again with better inputs.">
+
+</pre>
+</form>
+
+</body>
+</html>
