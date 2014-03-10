@@ -30,7 +30,9 @@ function calculate(formObj){
 	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', 
 endColorstr='#f47a20');
-        /*The first background line is a fallback for the non-CSS3 browsers, the second line is for Webkit browsers, the third line is for Firefox, and the last line is a gradient filter that is only read by Internet Explorer.*/
+        /*The first background line is a fallback for the non-CSS3 browsers, 
+        the second line is for Webkit browsers, the third line is for Firefox, 
+        and the last line is a gradient filter that is only read by Internet Explorer.*/
 }
 .calc:hover {
 	background: #f47c20;
